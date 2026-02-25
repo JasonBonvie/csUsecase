@@ -1,0 +1,31 @@
+extract_task:
+  description: >
+    Extract key information from this support email: {email_content}
+    Identify the sender, the main question or issue, and any urgency indicators.
+  expected_output: >
+    A structured summary with: sender, main_question, urgency_level, and any key details.
+  agent: extractor
+
+research_task:
+  description: >
+    Using the extraction from the previous task, search the web for information
+    relevant to answering the support question. Find helpful resources,
+    documentation, or solutions.
+  expected_output: >
+    A concise summary of findings with relevant links and key points to include in the response.
+  agent: researcher
+  context:
+    - extract_task
+
+draft_task:
+  description: >
+    Write a professional support response based on the extraction and research
+    from the previous tasks. Address the customer's question directly and
+    provide helpful next steps.
+  expected_output: >
+    A clear, professional support reply ready to send to the customer.
+    Use a friendly but professional tone. Keep it concise.
+  agent: responder
+  context:
+    - extract_task
+    - research_task
