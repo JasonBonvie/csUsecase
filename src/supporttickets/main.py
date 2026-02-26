@@ -98,7 +98,7 @@ class SupportEmailFlow(Flow[SupportState]):
     @human_feedback(
         message="Approve this support reply to send to the customer?",
         emit=["approved", "rejected"],
-        llm="gpt-4o-mini",
+        llm="anthropic/claude-haiku-4-5-20251001",
     )
     def request_review(self):
         """Pause for human approval (handled by CrewAI AMP: email or dashboard)."""

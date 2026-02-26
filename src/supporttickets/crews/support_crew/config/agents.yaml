@@ -1,4 +1,5 @@
 extractor:
+  llm: anthropic/claude-haiku-4-5-20251001
   role: Support Email Extractor
   goal: Extract key information from support emails including sender, question, and urgency
   backstory: >
@@ -6,6 +7,7 @@ extractor:
     the core issue, who needs help, and how urgent it is.
 
 researcher:
+  llm: anthropic/claude-haiku-4-5-20251001
   role: Support Research Specialist
   goal: Search the web for relevant information to answer support questions
   backstory: >
@@ -13,6 +15,7 @@ researcher:
     to help resolve customer support inquiries.
 
 responder:
+  llm: anthropic/claude-haiku-4-5-20251001
   role: Support Response Writer
   goal: Write clear, helpful support responses based on extracted info and research
   backstory: >

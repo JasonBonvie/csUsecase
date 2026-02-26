@@ -9,6 +9,7 @@ from crewai import Agent
 def get_gmail_agent() -> Agent:
     """Return an agent with Gmail fetch and send capabilities."""
     return Agent(
+        llm="anthropic/claude-haiku-4-5-20251001",
         role="Gmail Assistant",
         goal="Fetch and send emails via Gmail using platform integration",
         backstory="You use Gmail tools to fetch emails matching search criteria and send replies. "

@@ -22,7 +22,8 @@ crewai install
 ### Customizing
 
 **Add to your `.env` file:**
-- `OPENAI_API_KEY` - Required for agents
+- `ANTHROPIC_API_KEY` - Required for agents (Claude models)
+- `MODEL` - Optional; defaults to `anthropic/claude-haiku-4-5-20251001`
 - `SERPER_API_KEY` - For web search (SerperDevTool)
 - `CREWAI_PLATFORM_INTEGRATION_TOKEN` - For Gmail integration (fetch/send). Connect Gmail in [AMP Integrations](https://app.crewai.com/crewai_plus/connectors).
 
@@ -42,6 +43,10 @@ crewai run
 This command initializes the SupportTickets Flow as defined in your configuration.
 
 This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+
+## Heroku Deployment
+
+The Streamlit trigger app for AMP is in `heroku/`. See `heroku/README.md` for deploy steps.
 
 ## Understanding Your Crew
 
